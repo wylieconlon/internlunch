@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Internlunch</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<header>
+	<h1>Intern Lunch</h1>
+	<h2>Meet up with awesome local interns</h2>
+	</header>
+	
+	<section>
+		<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, :class => "flash #{key}") %>
+		<% end %>
+	</section>
+
+	<%= yield %>
+
+	<footer>
+	<p>Built by Alex and Wylie</p>
+	</footer>
+
+</body>
+</html>
