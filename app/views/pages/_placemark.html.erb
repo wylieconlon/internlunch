@@ -5,7 +5,7 @@
 		<%= "<div class='user'>" %>
 		<%= "<img src='//graph.facebook.com/#{user.Facebook[:extra][:raw_info][:username]}/picture' style='width:24px;height:24px;' />" %>
 		<%= "<strong>#{user.Facebook[:extra][:raw_info][:name]}</strong>" %>
-		<%= "<a class='send' data-username='#{user.Facebook[:extra][:raw_info][:username]}'>Message</a>" %>
+		<%= "<a class='send' href='#' data-username='#{user.Facebook[:extra][:raw_info][:username]}'>Msg</a>" %>
 		<%= "</div>" %>
 	<% end %>
 	</content>
