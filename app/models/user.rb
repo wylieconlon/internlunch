@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
 			:recoverable, :rememberable, :trackable, :validatable
 
 	# Setup accessible (or protected) attributes for your model
-	attr_accessible :email, :password, :password_confirmation, :remember_me
-	# attr_accessible :title, :body
+	attr_accessible :email, :password, :password_confirmation, :remember_me, :living_location, :working_location
+  # attr_accessible :title, :body
 
 	def self.new_with_session(params, session)
 		super.tap do |user|
