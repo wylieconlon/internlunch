@@ -13,7 +13,11 @@ class PagesController < ApplicationController
 
   def kml_by_company
     @companies = Company.all
-
+    @kml = Array.new
+    @companies.each do |company|
+      users = User.where("company_id = ?", company.company_id)
+      @kml.push([company, users])
+    end
 
   end
 end

@@ -12,6 +12,8 @@ Internlunch::Application.routes.draw do
   match 'register', :to => 'register#index'
   match 'register/create', :to => 'register#create', :as => :add_user_info
 
+  match 'kml_by_company', :to => 'pages#kml_by_company'
+
   get 'info' => 'pages#info'
 
   root :to => 'pages#home'
