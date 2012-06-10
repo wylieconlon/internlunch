@@ -13,7 +13,7 @@ $(function() {
 	infoWindow = new google.maps.InfoWindow({});
 
 	map.loadFromKML({
-		url: 'http://internlunch.herokuapp.com/geofeed/1',
+		url: 'http://internlunch.herokuapp.com/geofeed/2',
 		suppressInfoWindows: true,
 		events: {
 			click: function(point){
