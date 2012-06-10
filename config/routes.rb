@@ -1,4 +1,4 @@
-Internlunch2::Application.routes.draw do
+Internlunch::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_scope :user do
   #  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
@@ -8,6 +8,8 @@ Internlunch2::Application.routes.draw do
 
   match 'register/work', :as => :register_work
   match 'register/living', :as => :register_living
+
+  get 'info' => 'pages#info'
 
   root :to => 'pages#home'
 end

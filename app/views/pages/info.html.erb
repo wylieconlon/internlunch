@@ -1,0 +1,17 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag "info" %>
+<% end %>
+
+<div id="info">
+	
+	<h2>Almost there, NAME</h2>
+
+	<form method="post">
+		<input type="text" name="bio" placeholder="Describe yourself in one line" />
+		<input type="text" name="work" placeholder="Where do you work? i.e. Facebook" />
+		<input type="text" name="location" placeholder="Where do you live? i.e. 821 Folsom St." />
+		<small>We do not share your address with anyone</small>
+
+		<input type="submit" value="Get started &rarr;" />
+	</form>
+</div>
