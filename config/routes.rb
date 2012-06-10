@@ -8,11 +8,9 @@ Internlunch2::Application.routes.draw do
    get 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
   end
 
-  match 'register/work', :as => :register_work
-  match 'register/living', :as => :register_living
 
-  match 'register/work_save', :as => :register_work_save
-  match 'register/living_save', :as => :register_living_save
+  match 'register', :to => 'register#index'
+  match 'register/create', :to => 'register#create'
 
   root :to => 'pages#home'
 end

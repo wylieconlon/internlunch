@@ -32,11 +32,6 @@ class CompaniesController < ApplicationController
     end
   end
 
-  # GET /companies/1/edit
-  def edit
-    @company = Company.find(params[:id])
-  end
-
   # POST /companies
   # POST /companies.json
   def create
