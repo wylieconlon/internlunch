@@ -2,6 +2,12 @@
 	<title><%= company.name %></title>
 	<content type="html">
 	<%= "<p><strong>#{company.name} <span class='intern-count'>#{users.length}</span></h2>" %>
+
+	<% users.each do |user| %>
+		<%= "<div class='user'><strong>#{user.Facebook[:extra][:raw_info][:name]}</strong>" %>
+		<%= "<img src='//graph.facebook.com/#{user.Facebook[:extra][:raw_info][:username]}/picture' />" %>
+		<%= "</div>" %>
+	<% end %>
 	</content>
 	<georss:point><%=latitude%> <%=longitude%></georss:point>
 	<id>tag:internlunch.herokuapp.com,2012-06-10:/<%= company.id %></id>

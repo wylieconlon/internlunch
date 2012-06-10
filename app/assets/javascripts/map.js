@@ -7,7 +7,7 @@ $(function() {
  	   	lng: -122.3931977,
 		zoom: 4,
 		mapTypeControl: false,
-		streetViewControl: false
+		streetViewControl: false,
 	});
 
 	infoWindow = new google.maps.InfoWindow({});
@@ -24,4 +24,7 @@ $(function() {
 			}
 		}
 	});
+
+	$(window).on('resize', map.onResize);
 });
+
