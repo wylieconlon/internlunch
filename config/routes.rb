@@ -11,7 +11,7 @@ Internlunch::Application.routes.draw do
   match 'register', :to => 'register#index', :as => :add_user_info_form
   match 'register/create', :to => 'register#create', :as => :add_user_info
 
-  match 'geofeed', :to => 'pages#geofeed'
+  match 'geofeed/:id', :to => 'pages#geofeed'
 
   get 'info' => 'pages#info'
 
