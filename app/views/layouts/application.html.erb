@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Internlunch</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>InternLunch: Grab lunch with awesome interns around you</title>
+  <%= stylesheet_link_tag    "application", "core", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script type="text/javascript" src="http://use.typekit.com/jio4arw.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <%= yield :head %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 	<header>
 	<h1>Intern Lunch</h1>
-	<h2>Meet up with awesome local interns</h2>
 	</header>
 	
 	<section>
@@ -18,8 +20,10 @@
 			<%= content_tag(:div, value, :class => "flash #{key}") %>
 		<% end %>
 	</section>
-
-	<%= yield %>
+	
+	<div id="container">
+		<%= yield %>
+	</div>
 
 	<footer>
 	<p>Built by Alex and Wylie</p>
