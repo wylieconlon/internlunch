@@ -12,7 +12,7 @@ class RegisterController < ApplicationController
     if @company = Company.where("name LIKE ? AND address LIKE ?", params[:company_name], params[:company_name]).first
       @user.company_id = @company.id    
     else
-      @company = Company.create(:name => params[:company_name], :address => params[:company_address])
+      @company = Company.create!(:name => params[:company_name], :address => params[:company_address])
       @user.company_id = @company.id
     end
 
@@ -20,7 +20,7 @@ class RegisterController < ApplicationController
     @user.living_location = params[:living_location]
 
       if @user.save
-        redirect_to :root
+        #redirect_to :root
       else
         render action: "index"
       end
