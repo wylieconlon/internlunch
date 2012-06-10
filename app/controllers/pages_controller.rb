@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @user = current_user
     if user_signed_in?
         if (!@user.living_location? ||  !@user.company_id?)
-          redirect_to :add_user_info
+          redirect_to :add_user_info_form
          end
      end
   end

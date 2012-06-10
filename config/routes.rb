@@ -8,8 +8,8 @@ Internlunch::Application.routes.draw do
    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-  match 'register', :to => 'register#index', :as => :add_user_info
-  match 'register/create', :to => 'register#create'
+  match 'register', :to => 'register#index'
+  match 'register/create', :to => 'register#create', :as => :add_user_info
 
   match 'kml_by_company', :to => 'pages#kml_by_company'
 

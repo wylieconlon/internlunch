@@ -19,10 +19,9 @@ class RegisterController < ApplicationController
 
       @user.living_location = params[:living_location]
 
-      if @user.save!
+      if @user.save
         redirect_to :root
       else
-        render action: "index"
       end
   end
 end
