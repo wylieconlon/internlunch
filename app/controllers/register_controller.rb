@@ -1,5 +1,6 @@
 class RegisterController < ApplicationController
   before_filter :authenticate_user!
+  protect_from_forgery :except => :create 
   
   def index 
 
@@ -22,7 +23,7 @@ class RegisterController < ApplicationController
       if @user.save
         #redirect_to :root
       else
-        format.html { render action: "index" }
+        #format.html { render action: "index" }
       end
     end
   end
