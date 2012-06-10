@@ -26,16 +26,26 @@ $(function() {
 	});
 
 	$(window).on('resize', map.onResize);
-
-	$('#map').on('click', '.send', function() {
-		var username = $(this).attr('data-username');
-		console.log("username:", username);
+	
+	function sendToUser(username) {
 		FB.ui({
 			'method': 'send',
 			'to': username,
 			'name': "Let's get lunch",
 			'link': 'http://internlunch.herokuapp.com'
 		});
+	}
+	$('#map').on('click', '.send', function() {
+		var username = $(this).attr('data-username');
+		console.log("username:", username);
+		sendToUser(username);
+	});
+	$('#map').on('click', 'a', function() {
+		var username = $(this).parent().children('img').attr('src').match("com/([^/]+)/picture")[1];
+
+		if (username) {	
+			sendToUser(username);
+		}
 	});
 });
 

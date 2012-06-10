@@ -2,11 +2,6 @@
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCxJVf7hEuR6AB0O52ugqk5dE9A5nFmuYA&sensor=true
 		"></script>
 	<%= javascript_include_tag "map.js" %>
-	<%= stylesheet_link_tag "maps" %>
-<% end %>
-
-<div id="map"></div>
-
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -28,3 +23,9 @@
      ref.parentNode.insertBefore(js, ref);
    }(document));
 </script>
+<%= stylesheet_link_tag "maps" %>
+<% end %>
+
+<div id="map"></div>
+
+
