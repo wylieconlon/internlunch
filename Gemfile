@@ -5,6 +5,8 @@ gem 'rails', '3.2.3'
 gem 'thin'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+  gem 'jquery-rails'
+  gem 'jquery-ui-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -17,11 +19,9 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
-  gem 'jquery-ui-rails'
 end
 
 gem 'geokit'
-gem 'jquery-rails'
 
 group :development do
   gem 'sqlite3'

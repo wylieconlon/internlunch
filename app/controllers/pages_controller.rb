@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:home]
+  before_filter :authenticate_user!, :except => [:home, :geofeed]
   before_filter :incomplete_information
 
   def incomplete_information
@@ -14,12 +14,8 @@ class PagesController < ApplicationController
 
   def home
     if user_signed_in?
-      @login = 'Logged in'
-    @user = current_user.Facebook
-    else
-      @login = 'logged out'
+      redirect_to :companies
     end
-
   end
 
   def geofeed
