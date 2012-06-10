@@ -13,7 +13,7 @@ $(function() {
 	infoWindow = new google.maps.InfoWindow({});
 
 	map.loadFromKML({
-		url: 'http://internlunch.herokuapp.com/geofeed/2',
+		url: 'http://internlunch.herokuapp.com/geofeed/3',
 		suppressInfoWindows: true,
 		events: {
 			click: function(point){
@@ -27,8 +27,9 @@ $(function() {
 
 	$(window).on('resize', map.onResize);
 
-	$('.send').click(function() {
+	$('#map').on('click', '.send', function() {
 		var username = $(this).attr('data-username');
+		console.log("username:", username);
 		FB.ui({
 			'method': 'send',
 			'to': username,

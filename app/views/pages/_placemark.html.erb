@@ -2,9 +2,10 @@
 	<title><%= company.name %></title>
 	<content type="html">
 	<% users.each do |user| %>
-		<%= "<div class='user'><strong>#{user.Facebook[:extra][:raw_info][:name]}</strong>" %>
+		<%= "<div class='user'>" %>
 		<%= "<img src='//graph.facebook.com/#{user.Facebook[:extra][:raw_info][:username]}/picture' />" %>
-		<%= "<a class='send' data-username='#{user.Facebook[:extra][:raw_info][:username]}'>Message</a>" %>
+		<%= "<strong>#{user.Facebook[:extra][:raw_info][:name]}</strong>" %>
+		<%= "<a class='send' href='#' data-username='#{user.Facebook[:extra][:raw_info][:username]}'>Msg</a>" %>
 		<%= "</div>" %>
 	<% end %>
 	</content>
