@@ -9,7 +9,7 @@ Internlunch::Application.routes.draw do
 
 
   match 'register', :to => 'register#index'
-  match 'register/create', :to => 'register#create'
+  match 'register/create', :to => 'register#create', :as => :add_user_info
 
   get 'info' => 'pages#info'
 
