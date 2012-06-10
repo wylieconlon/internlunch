@@ -17,11 +17,11 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 
+  gem 'jquery-rails'
   gem 'jquery-ui-rails'
 end
 
 gem 'geokit'
-gem 'jquery-rails'
 
 group :development do
   gem 'sqlite3'
