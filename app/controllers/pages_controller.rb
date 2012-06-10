@@ -1,11 +1,15 @@
 class PagesController < ApplicationController
+  before_filter :authenticate_user!
+
   def home
     @title = "Home"
+
+
     
-    if signed_in?
-#    	@ideas = User.find(current_user).ideas
-#    	render 'ideas/index'
-    end
+  end
+
+  def kml_by_company
+    @companies = Company.all
   end
 end
 
