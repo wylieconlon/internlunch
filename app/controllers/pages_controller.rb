@@ -35,4 +35,3 @@ class PagesController < ApplicationController
     render :layout => false, :content_type => content_type
   end
 end
-
