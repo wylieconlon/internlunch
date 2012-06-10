@@ -11,15 +11,19 @@
 	<h2>Almost there, NAME</h2>
 
 	<form method="post" action="<%= add_user_info_path %>">
-		<input type="text" name="bio" placeholder="Describe yourself in one line" />
-		
-		<input type="text" id='company_name' name="work_location" placeholder="Where do you work? i.e. Facebook" />
-		<input type="hidden" id='company_address' name="company_address" />
-		<span id="company_address_display"></span>
-		<a id="company_address_confirm" href='#'>Not the right address?</a>
-		
-		<input type="text" name="living_location" placeholder="Where do you live? i.e. 821 Folsom St." />
-		<small>We do not share your address with anyone</small>
+		<input type="text" name="bio" placeholder="Describe yourself in one line" autofocus="autofocus" />
+
+		<div id="company">
+			<input type="text" id='company_name' name="work_location" placeholder="Where do you work? i.e. Facebook" />
+			<input type="hidden" id='company_address' name="company_address" />
+			<span id="company_address_display"></span>
+			<a id="company_address_confirm" href='#'>Add a new address</a>
+		</div>
+
+		<div id="apartment">
+			<input type="text" name="living_location" placeholder="Where do you live? i.e. 821 Folsom St." />
+			<small>We do not share your address with anyone</small>
+		</div>
 
 		<input type="submit" value="Get started &rarr;" />
 	</form>
