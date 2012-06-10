@@ -9,5 +9,8 @@ Internlunch2::Application.routes.draw do
   match 'register/work', :as => :register_work
   match 'register/living', :as => :register_living
 
+  match 'register/work_save', :as => :register_work_save
+  match 'register/living_save', :as => :register_living_save
+
   root :to => 'pages#home'
 end
