@@ -30,6 +30,7 @@ class PagesController < ApplicationController
       @kml.push([company, users])
     end
 
+    render :layout => false
   end
 end
 

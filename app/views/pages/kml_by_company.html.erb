@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
    <Document>
-      <name>Searcharoo Results for: newyork</name>
-          <description>The query took less than 1 millisecond and produced 19 geocoded results.</description>
+      <name></name>
+          <description><description>
           <% @kml.each do |placeholder| %>
-            <%= render :partial => 'placemark', locals => {:latitude => placeholder[0].latitude, :longitude => placeholder[0].longitude, :users => placeholder[1]} %>
+            <%= render :partial => 'placemark', :locals => {:latitude => placeholder[0].latitude, :longitude => placeholder[0].longitude, :users => placeholder[1]} %>
           <% end %>
    </Document>
    </kml>

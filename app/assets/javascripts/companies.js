@@ -18,35 +18,26 @@ $(function() {
 	}
 
 	console.log("companies loaded", company_names);
-
+	
 	$('#company_address_confirm').hide()
 		.click(function() {
-			var prev = $('#company_address').val();
-			
-			$('<input />', {
-				'type': 'text',
-				'id': 'company_address',
-				'placeholder': 'What is your work address?'
-			}).replaceAll('#company_address').focus();
-
-			$('#company_address_confirm').hide();
-			$('#company_address_display').text('').hide();
-
-			return false;
+			$('#company_address').val('').focus();
 		});
 	$('#company_address_display').hide();
-
+	
 	$('#company_name').autocomplete({
 		source: company_names,
 		select: function(e, ui) {
 			console.log(ui.item);
 			
 			$('#company_address_confirm').show();
-			$('#company_address_display').text(ui.item.address).show();
 
 			$('#company_address').val(ui.item.address);
+
+			$('#apartment input').focus();
 		}
 	})
+	// http://stackoverflow.com/questions/3488016/using-html-in-jquery-ui-autocomplete
 	.data("autocomplete")._renderItem = function(ul, item) {
 		return $("<li></li>")
 				.data("item.autocomplete", item)
