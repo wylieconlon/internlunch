@@ -1,4 +1,15 @@
+<%= content_for :head do %>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCxJVf7hEuR6AB0O52ugqk5dE9A5nFmuYA&sensor=true
+		"></script>
+	<%= javascript_include_tag "map.js" %>
+	<%= stylesheet_link_tag "maps" %>
+<% end %>
+
 <h1>Listing companies</h1>
+
+<div id="map">
+</div>
+
 
 <table>
   <tr>

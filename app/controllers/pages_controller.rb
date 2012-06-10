@@ -9,6 +9,7 @@ class PagesController < ApplicationController
           redirect_to :add_user_info_form
          end
      end
+    return true
   end
 
   def home
@@ -29,7 +30,9 @@ class PagesController < ApplicationController
       @kml.push([company, users])
     end
 
-    render :layout => false
+	mime_type = Mime::Type.lookup_by_extension('kml')
+	content_type = mime_type.to_s unless mime_type.nil?
+    render :layout => false, :content_type => content_type
   end
 end
 
