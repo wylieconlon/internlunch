@@ -1,3 +1,13 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag "home" %>
+<% end %>
+
 <div id="home">
+	<div id="banner">
+		<p>Grab lunch with</p>
+		<h2>Awesome</h2>
+		<p>interns around you</p>
+	</div>
+
 	<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 </div>
