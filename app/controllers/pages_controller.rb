@@ -1,8 +1,12 @@
 class PagesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:home]
 
   def home
-    @title = "Home"
+    if user_signed_in?
+      @login = 'Logged in'
+    else
+      @login = 'logged out'
+    end
 
 
     
@@ -10,6 +14,8 @@ class PagesController < ApplicationController
 
   def kml_by_company
     @companies = Company.all
+
+
   end
 end
 
