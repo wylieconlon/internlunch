@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def incomplete_information
     @user = current_user
     if user_signed_in?
-        if (! @user.try(:living_location) ||  !@user.get(:working_location))
+        if (!@user.living_location? ||  !@user.working_location?)
           redirect_to :controller => :register, :action => :work
         end
     end

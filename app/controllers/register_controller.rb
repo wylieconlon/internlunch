@@ -19,12 +19,10 @@ class RegisterController < ApplicationController
     @user.work_location = params[:work_location]
     @user.living_location = params[:living_location]
 
-    respond_to do |format|
       if @user.save
         redirect_to :root
       else
-        format.html { render action: "index" }
+        render action: "index"
       end
-    end
   end
 end
