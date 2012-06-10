@@ -26,7 +26,7 @@ class PagesController < ApplicationController
       @kml.push([company, users])
     end
 
-	mime_type = Mime::Type.lookup_by_extension('rss')
+	mime_type = Mime::Type.lookup_by_extension('atom')
 	content_type = mime_type.to_s unless mime_type.nil?
     render :layout => false, :content_type => content_type
   end

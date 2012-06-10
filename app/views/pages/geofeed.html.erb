@@ -5,7 +5,7 @@
 
 <id>tag:internlunch.herokuapp.com,2012-06-10:/20120610164837544</id>
 <updated><%= Time.now.xmlschema %></updated>
-<link rel="self" href="http://localhost:3000/kml_by_company" />
+<link rel="self" href="http://internlunch.herokuapp.com/geofeed/1" />
 
 <% @kml.each do |placeholder| %>
 <%= render :partial => 'placemark', :locals => {:latitude => placeholder[0].latitude, :longitude => placeholder[0].longitude, :users => placeholder[1], :company => placeholder[0]} %>
