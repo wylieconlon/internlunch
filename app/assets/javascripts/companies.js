@@ -33,6 +33,8 @@ $(function() {
 			$('#company_address_confirm').show();
 
 			$('#company_address').val(ui.item.address);
+
+			$('#apartment input').focus();
 		}
 	})
 	// http://stackoverflow.com/questions/3488016/using-html-in-jquery-ui-autocomplete

@@ -15,10 +15,11 @@ class PagesController < ApplicationController
     @companies = Company.all
     @kml = Array.new
     @companies.each do |company|
-      users = User.where("company_id = ?", company.company_id)
+      users = User.where("company_id = ?", company.id)
       @kml.push([company, users])
     end
 
+    render :layout => false
   end
 end
 
