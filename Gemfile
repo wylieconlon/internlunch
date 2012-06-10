@@ -19,6 +19,7 @@ group :assets do
   gem 'jquery-ui-rails'
 end
 
+gem 'geokit'
 gem 'jquery-rails'
 
 group :development do
