@@ -1,20 +1,21 @@
 class RegisterController < ApplicationController
-  def living 
+  def index 
 
   end
 
-  def living_save
+  def create
     @user = current_user
+    @user.company_id = Company.find(params[:company_id])
+    @user.work_location = params[:work_location]
+    @user.living_location = params[:living_location]
 
-    @user.company = Company.find(param[:company_id])
-  end
-
-  def work
-  end
-
-  def work_save
-  end
-
-  def living
+    respond_to do |format|
+      if @user.save
+        redirect_to :root
+      else
+        format.html { render action: "index" }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 end
