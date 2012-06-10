@@ -5,7 +5,7 @@ Internlunch::Application.routes.draw do
   devise_scope :user do
   #  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
    get 'sign_in', :to => 'pages#home', :as => :new_user_session
-   get 'sign_out', :to => 'pages#home', :as => :destroy_user_session
+   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
 
