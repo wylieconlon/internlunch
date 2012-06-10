@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
   <title>InternLunch: Grab lunch with awesome interns around you</title>
   <%= stylesheet_link_tag    "application", "core", :media => "all" %>
@@ -16,7 +16,9 @@
 			<%= content_tag(:div, value, :class => "flash #{key}") %>
 		<% end %>
 	</section>
-	
+
+	<div id="fb-root"></div>
+
 	<div id="container">
 		<%= yield %>
 	</div>

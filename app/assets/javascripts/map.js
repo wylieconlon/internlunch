@@ -26,5 +26,14 @@ $(function() {
 	});
 
 	$(window).on('resize', map.onResize);
+
+	$('#send').click(function() {
+		FB.ui({
+			'method': 'send',
+			'to': 'wylie',
+			//'name': "Let's get lunch",
+			'link': 'http://facebook.com'
+		});
+	});
 });
 
