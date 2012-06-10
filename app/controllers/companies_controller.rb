@@ -75,4 +75,13 @@ class CompaniesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # GET /autocomplete?q=
+  def autocomplete
+    query = params[:q]
+    
+	@companies = Company.find(:all, :conditions => ["name LIKE ?", "#{query}%"])
+
+	render :json => @companies
+  end
 end
