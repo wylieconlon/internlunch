@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610071738) do
+ActiveRecord::Schema.define(:version => 20120610172108) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(:version => 20120610071738) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",                    :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                         :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(:version => 20120610071738) do
     t.string   "work_location"
     t.string   "living_location"
     t.string   "phone"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
     t.integer  "company_id"
     t.string   "Bio"
-    t.string   "Facebook"
+    t.text     "Facebook",               :limit => 255
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
