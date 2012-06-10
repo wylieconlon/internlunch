@@ -9,11 +9,11 @@ class RegisterController < ApplicationController
   def create
     @user = current_user
 
-    if @company = Company.find(params[:company_id])
-      @user.company_id = @company.company_id    
+    if @company = Company.where("name LIKE ? AND address LIKE ?", params[:company_name], params[:company_name]).first
+      @user.company_id = @company.id    
     else
       @company = Company.create(:name => params[:company_name], :address => params[:company_address])
-      @user.company_id = @company.company_id
+      @user.company_id = @company.id
     end
 
     @user.work_location = params[:work_location]
@@ -21,9 +21,9 @@ class RegisterController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        #redirect_to :root
+        redirect_to :root
       else
-        #format.html { render action: "index" }
+        format.html { render action: "index" }
       end
     end
   end
