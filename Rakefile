@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Internlunch2::Application.load_tasks
+Internlunch::Application.load_tasks
