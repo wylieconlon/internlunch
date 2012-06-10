@@ -1,9 +1,13 @@
-<Placemark>   
-	<name>Placemark</name>
-    <description><![CDATA[
-    <%=users.inspect%>
-    ]]></description>
-    <Point>      
-        <coordinates><%=longitude%>,<%=latitude%></coordinates>    
-    </Point>
-</Placemark>
+<entry>	
+	<title><%= company.name %></title>
+	<content type="html">
+	<%= "<p><strong>#{company.name} <span class='intern-count'>#{users.length}</span></h2>" %>
+	</content>
+	<georss:point><%=latitude%> <%=longitude%></georss:point>
+	<id>tag:internlunch.herokuapp.com,2012-06-10:/<%= company.id %></id>
+	<updated><%= company.updated_at.xmlschema %></updated>
+	<author>
+		<name><%= company.name %></name>
+		<uri>http://internlunch.herokuapp.com/company/<%= company.id %></uri>
+	</author>
+</entry>

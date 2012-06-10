@@ -22,7 +22,7 @@ class PagesController < ApplicationController
 
   end
 
-  def kml_by_company
+  def geofeed
     @companies = Company.all
     @kml = Array.new
     @companies.each do |company|
@@ -30,7 +30,7 @@ class PagesController < ApplicationController
       @kml.push([company, users])
     end
 
-	mime_type = Mime::Type.lookup_by_extension('kml')
+	mime_type = Mime::Type.lookup_by_extension('rss')
 	content_type = mime_type.to_s unless mime_type.nil?
     render :layout => false, :content_type => content_type
   end

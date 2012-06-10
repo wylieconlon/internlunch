@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:georss="http://www.georss.org/georss">
+<title>Companies</title>
+
+<id>tag:internlunch.herokuapp.com,2012-06-10:/20120610164837544</id>
+<updated><%= Time.now.xmlschema %></updated>
+<link rel="self" href="http://localhost:3000/kml_by_company" />
+
+<% @kml.each do |placeholder| %>
+<%= render :partial => 'placemark', :locals => {:latitude => placeholder[0].latitude, :longitude => placeholder[0].longitude, :users => placeholder[1], :company => placeholder[0]} %>
+<% end %>
+</feed>
