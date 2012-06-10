@@ -2,8 +2,8 @@ class RegisterController < ApplicationController
   before_filter :authenticate_user!
   protect_from_forgery :except => :create 
   
-  def index 
-
+  def index
+    @companies = Company.all
   end
 
   def create
