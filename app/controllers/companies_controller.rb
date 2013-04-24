@@ -6,7 +6,9 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @companies }
+      format.json { render json: @companies.to_json(:include => { :users => {
+                                                      :except => :Facebook
+                                                    }})}
     end
   end
 
@@ -80,8 +82,8 @@ class CompaniesController < ApplicationController
   def autocomplete
     query = params[:q]
     
-	@companies = Company.find(:all, :conditions => ["name LIKE ?", "#{query}%"])
+    @companies = Company.find(:all, :conditions => ["name LIKE ?", "#{query}%"])
 
-	render :json => @companies
+    render :json => @companies
   end
 end

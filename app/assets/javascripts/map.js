@@ -4,10 +4,10 @@ $(function() {
 	var map = new GMaps({
 		div: '#map',
 		lat: 37.7827753,
- 	   	lng: -122.3931977,
+		lng: -122.3931977,
 		zoom: 4,
 		mapTypeControl: false,
-		streetViewControl: false,
+		streetViewControl: false
 	});
 
 	infoWindow = new google.maps.InfoWindow({});
@@ -17,7 +17,6 @@ $(function() {
 		suppressInfoWindows: true,
 		events: {
 			click: function(point){
-				console.log(point, point.featureData.status);
 				infoWindow.setContent(point.featureData.infoWindowHtml);
 				infoWindow.setPosition(point.latLng);
 				infoWindow.open(map.map);
@@ -25,8 +24,6 @@ $(function() {
 		}
 	});
 
-	$(window).on('resize', map.onResize);
-	
 	function sendToUser(username) {
 		FB.ui({
 			'method': 'send',
@@ -37,13 +34,12 @@ $(function() {
 	}
 	$('#map').on('click', '.send', function() {
 		var username = $(this).attr('data-username');
-		console.log("username:", username);
 		sendToUser(username);
 	});
 	$('#map').on('click', 'a', function() {
 		var username = $(this).parent().children('img').attr('src').match("com/([^/]+)/picture")[1];
 
-		if (username) {	
+		if (username) {
 			sendToUser(username);
 		}
 	});

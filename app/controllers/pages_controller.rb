@@ -5,10 +5,10 @@ class PagesController < ApplicationController
   def incomplete_information
     @user = current_user
     if user_signed_in?
-        if (!@user.living_location? ||  !@user.company_id?)
-          redirect_to :add_user_info_form
-         end
-     end
+      if (!@user.living_location? || !@user.company_id?)
+        redirect_to :add_user_info_form
+      end
+    end
     return true
   end
 
@@ -26,8 +26,13 @@ class PagesController < ApplicationController
       @kml.push([company, users])
     end
 
-	mime_type = Mime::Type.lookup_by_extension('atom')
-	content_type = mime_type.to_s unless mime_type.nil?
+    mime_type = Mime::Type.lookup_by_extension('atom')
+    content_type = mime_type.to_s unless mime_type.nil?
     render :layout => false, :content_type => content_type
+  end
+
+  def companies
+    @companies = Company.all
+    render :json => @companies
   end
 end

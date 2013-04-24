@@ -1,17 +1,22 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-	def facebook
-		# You need to implement the method below in your model
-		@user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
+  def facebook
+    # You need to implement the method below in your model
+    @user = User.find_for_facebook_oauth(request.env["omniauth.auth"], current_user)
 
-		if @user.persisted?
-			flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
-      @user.Facebook = request.env["omniauth.auth"]
+    if @user.persisted?
+      flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
+      
+      fb = request.env["omniauth.auth"]
+      @user.Facebook = fb
+      @user.name = fb["info"]["name"]
+      @user.username = fb["info"]["username"]
+
       @user.save!
-			sign_in_and_redirect @user, :event => :authentication
-		else
-			session["devise.facebook_data"] = request.env["omniauth.auth"]
-			redirect_to new_user_registration_url
-		end
-	end
+      sign_in_and_redirect @user, :event => :authentication
+    else
+      session["devise.facebook_data"] = request.env["omniauth.auth"]
+      redirect_to new_user_registration_url
+    end
+  end
 end
 

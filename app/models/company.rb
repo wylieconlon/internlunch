@@ -1,5 +1,8 @@
 class Company < ActiveRecord::Base
   include Geokit::Geocoders
+  
+  has_many :users
+
   attr_accessible :address, :name
 
   after_validation :geokitgeocode

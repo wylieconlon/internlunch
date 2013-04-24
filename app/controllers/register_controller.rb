@@ -22,6 +22,6 @@ class RegisterController < ApplicationController
       if @user.save
         redirect_to :root
       else
-      end
+    end
   end
 end

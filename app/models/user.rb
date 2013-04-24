@@ -4,18 +4,19 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable, :omniauthable,
 			:recoverable, :rememberable, :trackable, :validatable
 
-  serialize :Facebook
+	serialize :Facebook
 
 	# Setup accessible (or protected) attributes for your model
-	attr_accessible :email, :password, :password_confirmation, :remember_me, :living_location, :work_location, :Facebook
-  # attr_accessible :title, :body
-  
-  has_one :company
+	attr_accessible :email, :password, :password_confirmation, :remember_me, :living_location, :work_location, :Facebook, :name, :username
+	# attr_accessible :title, :body
+	
+	has_one :company
 
 	def self.new_with_session(params, session)
 		super.tap do |user|
 			if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-				prints data
+				user.username = data["username"]
+				user.name = data["name"]
 				user.email = data["email"]
 			end
 		end
