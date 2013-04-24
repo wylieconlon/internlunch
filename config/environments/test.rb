@@ -34,4 +34,7 @@ Internlunch::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  config.secret_token = 'ANGG5EVRurTJH4uy2ckkIokgp373sQqwaO0rfJkLiz4qwUs1T3J1CRcTXYD2mWm'
+
 end

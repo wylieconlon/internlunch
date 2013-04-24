@@ -36,4 +36,7 @@ Internlunch::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.secret_token = 'mG0PUIlsAfNyAS4CLXQvANx86HF6HAdc7gn8QLtIr2l4Gw6oGje9bzEQMDMfgzQ'
+
 end
