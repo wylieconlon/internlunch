@@ -1,7 +1,13 @@
 Installation
 ============
 
-You must create a [`.env`](http://ddollar.github.io/foreman/#ENVIRONMENT) file with a `FACEBOOK_APP_ID` and `FACEBOOK_SECRET` set.
+You must create a [`.env`](http://ddollar.github.io/foreman/#ENVIRONMENT) file like this:
+
+    FACEBOOK_APP_ID="APP_ID"
+    FACEBOOK_SECRET="SECRET"
+
+    GOOGLE_MAPS_KEY="MAPS_KEY"
+    GOOGLE_GEOCODER_KEY="SECRET"
 
 To run the app, use `foreman start`
 

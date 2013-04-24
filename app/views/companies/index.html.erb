@@ -1,5 +1,5 @@
 <%= content_for :head do %>
-	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCxJVf7hEuR6AB0O52ugqk5dE9A5nFmuYA&sensor=true
+	<script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_KEY']%>&sensor=true
 		"></script>
 	<%= javascript_include_tag "map.js" %>
 <script>
